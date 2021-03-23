@@ -1,0 +1,210 @@
+/* RESET DE ESTILO Y REGLAS GENÉRICAS */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* PARA HACER COLUMNAS */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex1 {
+  flex: 1;
+}
+.flex2 {
+  flex: 2;
+}
+.flex3 {
+  flex: 3;
+}
+.flex4 {
+  flex: 4;
+}
+.flex5 {
+  flex: 5;
+}
+.flex6 {
+  flex: 6;
+}
+
+.flex7 {
+  flex: 7;
+}
+.flex8 {
+  flex: 8;
+}
+
+/* INICIO DE LA HOJA DE ESTILOS */
+html {
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 44%,
+    rgba(9, 9, 121, 1) 70%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px auto 20px auto;
+  padding: 20px;
+  width: 80%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px white;
+}
+
+/* HEADER */
+header {
+  background-image: url("../imagenes/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 20%;
+}
+header figure {
+  padding: 10px;
+  background-color: white;
+}
+header figure img {
+  width: 100%;
+}
+header h1,
+header figure figcaption {
+  margin: auto;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px #090979;
+}
+header h1 {
+  font-size: 4em;
+}
+
+/* NAVEGACION */
+nav {
+  background-color: #00d4ff;
+  border: solid 3px #00d4ff;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 15px;
+  text-transform: capitalize;
+  color: #090979;
+  font-weight: bold;
+  text-shadow: 0px 0px 2px white;
+  transition: 0.5s;
+}
+nav ul li:hover {
+  color: black;
+  background-color: white;
+  transform: scale(1.2) rotate(4deg);
+}
+
+/* FORMULARIO */
+#login {
+  text-align: center;
+  padding: 10px;
+  background-color: #0554ab;
+}
+
+#login input {
+  width: 100px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#login input[type="submit"] {
+  background-color: pink;
+  color: #090979;
+  font-weight: bold;
+}
+
+/* ESTILOS DEL MAIN  */
+main p {
+  text-align: justify;
+}
+
+main h2 {
+  margin-bottom: 15px;
+  margin-top: 20px;
+  color: #090979;
+}
+
+main p {
+  margin-bottom: 15px;
+}
+
+/* ESTILOS DE LA TABLA */
+#bienvenido table {
+  margin: 0px 0px 30px 40px;
+  float: right;
+}
+
+table thead {
+  background-color: #00d4ff;
+  color: #090979;
+  text-transform: uppercase;
+}
+/* LAS th YA ESTAN EN NEGRITA
+table th {
+  font-weight: bold;
+}
+*/
+table th,
+table td {
+  padding: 5px 10px;
+  border: solid 1px #090979;
+}
+table tbody tr:nth-of-type(odd) {
+  background-color: #0554ab;
+  color: white;
+}
+
+table .rate {
+  text-align: center;
+}
+
+/* ESTILO DE LA GALERIA */
+figure {
+  min-width: 100px;
+}
+
+figure img {
+  width: 90%;
+  height: 80%;
+  box-shadow: 2px 2px 2px rgba(60, 60, 60, 0.6);
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+figure img:hover {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 10px 10px 10px rgba(60, 60, 60, 0.6);
+}
+
+figure figcaption {
+  text-align: center;
+  font-style: italic;
+  color: #090979;
+  font-size: 0.8em;
+}
+
+/* ESTILOS DEL FOOTER */
+footer {
+  padding: 10px 10px;
+  background-color: #0554ab;
+  text-align: right;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+footer p {
+  padding: 5px;
+}
