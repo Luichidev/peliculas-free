@@ -8,6 +8,10 @@ a {
   text-decoration: none;
 }
 
+section {
+  padding-bottom: 20px;
+}
+
 /* PARA HACER COLUMNAS */
 .flex-container {
   display: flex;
@@ -118,6 +122,7 @@ nav ul li:hover {
   width: 100px;
   border-radius: 5px;
   padding: 5px;
+  margin: 5px;
 }
 
 #login input[type="submit"] {
@@ -141,7 +146,34 @@ main p {
   margin-bottom: 15px;
 }
 
-/* ESTILOS DE LA TABLA */
+/* ESTILOS ASIDE */
+
+.related-pages {
+  padding-left: 15px;
+}
+
+.related-pages ul {
+  border: dashed 1px black;
+  background-color: rgba(173, 216, 230, 0.2);
+}
+
+.related-pages ul li {
+  list-style: none;
+  padding: 15px;
+  text-align: center;
+}
+
+.related-pages ul li a {
+  font-weight: bold;
+}
+
+.related-pages ul li span {
+  font-weight: bold;
+  color: #090979;
+  text-transform: uppercase;
+}
+
+/* ESTILOS DE LAS TABLAS */
 #bienvenido table {
   margin: 0px 0px 30px 40px;
   float: right;
@@ -163,20 +195,37 @@ table td {
   border: solid 1px #090979;
 }
 table tbody tr:nth-of-type(odd) {
-  background-color: #0554ab;
-  color: white;
+  background-color: rgba(173, 216, 230, 0.2);
 }
 
 table .rate {
   text-align: center;
 }
 
-/* ESTILO DE LA GALERIA */
-figure {
-  min-width: 100px;
+#listado {
+  width: 100%;
 }
 
-figure img {
+#listado td img {
+  width: 100%;
+  max-width: 40px;
+}
+
+#listado td {
+  text-align: center;
+}
+
+#listado .titulo-peliculas {
+  text-align: left;
+}
+
+/* ESTILO DE LA GALERIA */
+section figure {
+  min-width: 250px;
+  max-width: 250px;
+}
+
+section figure img {
   width: 90%;
   height: 80%;
   box-shadow: 2px 2px 2px rgba(60, 60, 60, 0.6);
@@ -184,12 +233,12 @@ figure img {
   border-radius: 10px;
 }
 
-figure img:hover {
+section figure img:hover {
   transform: scale(1.2) rotate(5deg);
   box-shadow: 10px 10px 10px rgba(60, 60, 60, 0.6);
 }
 
-figure figcaption {
+section figure figcaption {
   text-align: center;
   font-style: italic;
   color: #090979;
@@ -203,8 +252,79 @@ footer {
   text-align: right;
   color: #fff;
   font-size: 1.5em;
+  margin-top: 20px;
 }
 
 footer p {
   padding: 5px;
+}
+
+/* MEDIA QUERY , EN FORMATO MOVIL DESAPARECEMOS EL LOGO */
+
+@media screen and (max-width: 800px) {
+  #logo {
+    display: none;
+  }
+  #bienvenido table {
+    margin: 0 0 20px 0;
+    float: none;
+  }
+  header {
+    height: 200px;
+  }
+}
+
+/* ESTILO DE LA PAGINA PELICULA */
+
+.container-titulo {
+  background-color: #333333;
+  padding: 15px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.title span {
+  color: #ccc;
+}
+
+.title h3 {
+  font-size: 2em;
+}
+
+.title p {
+  padding-top: 5px;
+  font-size: 1.1em;
+}
+
+small {
+  padding: 0;
+  margin: 0;
+  color: silver;
+}
+
+.rating {
+  font-size: 2.5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.portada {
+  background-color: #000;
+}
+
+.portada img {
+  width: 100%;
+  min-width: 182px;
+  max-width: 182px;
+}
+
+.trailer iframe {
+  width: 100%;
+  height: 100%;
+  min-width: 300px;
+  border: none;
+}
+
+.detalle-pelicula {
+  margin-top: 20px;
 }
