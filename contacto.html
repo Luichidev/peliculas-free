@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aqui encontrarás películas totalmente gratis">
+  <title>Registro | Películas Free</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <header class="flex-container">
+    <figure id="logo" class="flex1">
+      <a href="index.html">
+        <img src="imagenes/logo.png" alt="logo de mi web películas FREE">
+      </a>
+    </figure>
+    <h1 class="flex4">Películas FREE</h1>
+  </header>
+
+
+  <div class="flex-container">
+    <nav class="flex5">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="llista.html">Películas</a></li>
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="quienes.html">Quienes somos</a></li>
+        <li class="active"><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <form id="login" class="flex2">
+      <input type="text" name="user" placeholder="user">
+      <input type="password" name="password" placeholder="pwrd">
+      <input type="submit" name="login" value="login">
+    </form>
+  </div>
+
+  <main class="flex-container">
+    <section class="flex5">
+      <h2>FORMULARIO DE CONTACTO</h2>
+      <form method="post" autocomplete="off" id="contacto">
+        <label class="labels" for="autor">Autor</label>
+        <input type="text" id="autor" name="autor" required pattern="^[a-zA-ZñçáéíóúàèòïüÑÇÁÉÍÓÚÀÈÒÏÜ]{2,16}$"
+          title="solamente letras">
+        <span>(2 a 16 caracteres)</span>
+        <br>
+        <label class="labels" for="asunto">Asunto</label>
+        <select name="asunto" id="asunto">
+          <option value="1">Informacíon general</option>
+          <option value="2">Informacíon sobre la web</option>
+          <option value="3">Informacíon sobre los derechos de autor</option>
+          <option value="4">Informacíon sobre el autor de la web</option>
+          <option value="5">Otros</option>
+        </select>
+        <br>
+        <label class="labels" for="mensaje">Mensaje</label>
+        <textarea name="mensaje" id="mensaje"></textarea>
+        <br>
+        <div class="controls">
+          <input type="submit" value="Enviar">
+          <input type="reset" value="Borrar">
+        </div>
+      </form>
+    </section>
+    <aside class="flex2 related-pages">
+      <h2>Páginas relacionadas</h2>
+      <ul>
+        <li><a target="_blank" href="https://youtube.com">ir a Youtube</a></li>
+        <li><a target="_blank" href="https://www.imdb.com/">ir a imdb</a></li>
+        <li><span>Página Colaboradora:</span></li>
+        <li><a target="_blank" href="https://www.juegayestudia.com/">ir a Juega y Estudia</a></li>
+
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <details>
+      <summary>Autor</summary>
+      <p><a href="https://twitter.com/@luichidev">@luichidev - 2021</a></p>
+    </details>
+  </footer>
+</body>
+
+</html>
