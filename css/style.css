@@ -46,13 +46,8 @@ section {
 
 /* INICIO DE LA HOJA DE ESTILOS */
 html {
-  background: rgb(2, 0, 36);
-  background: radial-gradient(
-    circle,
-    rgba(2, 0, 36, 1) 44%,
-    rgba(9, 9, 121, 1) 70%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: #ccc;
+  background: radial-gradient(circle, #020024 44%, #090979 70%, #00d4ff 100%);
 }
 
 body {
@@ -87,7 +82,7 @@ header figure figcaption {
   text-shadow: 2px 2px 2px #090979;
 }
 header h1 {
-  font-size: 4em;
+  font-size: 4rem;
 }
 
 /* NAVEGACION */
@@ -109,6 +104,12 @@ nav ul li:hover {
   color: black;
   background-color: white;
   transform: scale(1.2) rotate(4deg);
+}
+
+li.active {
+  color: #fff;
+  background-color: #0041db;
+  border-radius: 5px;
 }
 
 /* FORMULARIO */
@@ -140,6 +141,7 @@ main h2 {
   margin-bottom: 15px;
   margin-top: 20px;
   color: #090979;
+  border-bottom: solid 2px #090979;
 }
 
 main p {
@@ -195,7 +197,7 @@ table td {
   border: solid 1px #090979;
 }
 table tbody tr:nth-of-type(odd) {
-  background-color: rgba(173, 216, 230, 0.2);
+  background-color: #00d4ff30;
 }
 
 table .rate {
@@ -209,6 +211,13 @@ table .rate {
 #listado td img {
   width: 100%;
   max-width: 40px;
+  min-width: 40px;
+}
+
+#listado td a img {
+  width: 100%;
+  max-width: 40px;
+  min-width: 25px;
 }
 
 #listado td {
@@ -242,7 +251,7 @@ section figure figcaption {
   text-align: center;
   font-style: italic;
   color: #090979;
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 /* ESTILOS DEL FOOTER */
@@ -251,7 +260,7 @@ footer {
   background-color: #0554ab;
   text-align: right;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin-top: 20px;
 }
 
@@ -276,6 +285,27 @@ footer p {
 
 /* ESTILO DE LA PAGINA PELICULA */
 
+#search {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+#search input[type="search"] {
+  border: none;
+  border-bottom: solid 2px #090979;
+  padding: 5px;
+}
+
+#search input[type="image"] {
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  padding: 2px;
+  border: solid 2px lightgray;
+  border-radius: 5px;
+}
+
 .container-titulo {
   background-color: #333333;
   padding: 15px;
@@ -288,12 +318,12 @@ footer p {
 }
 
 .title h3 {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .title p {
   padding-top: 5px;
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 
 small {
@@ -327,4 +357,73 @@ small {
 
 .detalle-pelicula {
   margin-top: 20px;
+}
+
+/* ESTILOS DE LA PAGINA REGISTRO */
+#registro {
+  text-align: center;
+  min-width: 350px;
+}
+
+#registro .labels {
+  display: inline-block;
+  min-width: 100px;
+}
+
+#registro fieldset {
+  padding: 15px;
+  text-align: left;
+  background-color: #00d4ff30;
+  margin-bottom: 15px;
+  min-width: 350px;
+  max-width: 600px;
+}
+
+#registro input {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+#registro select {
+  width: 80px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+#registro input[type="submit"],
+#registro input[type="reset"] {
+  color: #090979;
+  font-weight: bold;
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#registro input[type="submit"] {
+  background-color: #afa;
+  border-color: green;
+}
+
+#registro input[type="reset"] {
+  background-color: #faa;
+  border-color: red;
+}
+
+#registro input[type="text"]:valid {
+  background-color: #efe;
+  box-shadow: 0 0 4px green;
+}
+
+#registro input[type="text"]:invalid {
+  background-color: #fee;
+  box-shadow: 0 0 4px green;
+}
+
+#registro input:disabled {
+  background-color: #ccc;
+  border: inset;
+  cursor: not-allowed;
 }
