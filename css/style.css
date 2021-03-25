@@ -281,6 +281,23 @@ footer p {
   header {
     height: 200px;
   }
+  body {
+    padding: 5px;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header {
+    height: 200px;
+  }
+  body {
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0px;
+  }
 }
 
 /* ESTILO DE LA PAGINA PELICULA */
@@ -359,41 +376,66 @@ small {
   margin-top: 20px;
 }
 
-/* ESTILOS DE LA PAGINA REGISTRO */
+/* ESTILOS DE LA PAGINA REGISTRO y CONTACTO */
 #registro {
   text-align: center;
-  min-width: 350px;
+  min-width: 300px;
 }
 
-#registro .labels {
+#contacto {
+  min-width: 300px;
+  margin: 20px 0;
+  border: solid 1px #00d4ff;
+  padding: 20px;
+  background-color: rgba(173, 216, 230, 0.2);
+}
+#registro .labels,
+#contacto .labels {
   display: inline-block;
-  min-width: 100px;
+  min-width: 80px;
+}
+
+#contacto .labels,
+#contacto input {
+  margin-top: 15px;
 }
 
 #registro fieldset {
-  padding: 15px;
+  padding: 10px;
   text-align: left;
   background-color: #00d4ff30;
   margin-bottom: 15px;
-  min-width: 350px;
+  min-width: 300px;
   max-width: 600px;
 }
 
-#registro input {
+#registro input,
+#contacto input {
   border-radius: 5px;
   padding: 5px;
   margin: 5px;
 }
 
+#contacto select,
+#contacto input {
+  width: 50%;
+}
+
 #registro select {
   width: 80px;
+}
+
+#registro select,
+#contacto select {
   border-radius: 5px;
   padding: 5px;
   margin: 5px;
 }
 
 #registro input[type="submit"],
-#registro input[type="reset"] {
+#registro input[type="reset"],
+#contacto input[type="submit"],
+#contacto input[type="reset"] {
   color: #090979;
   font-weight: bold;
   width: 100px;
@@ -402,12 +444,14 @@ small {
   cursor: pointer;
 }
 
-#registro input[type="submit"] {
+#registro input[type="submit"],
+#contacto input[type="submit"] {
   background-color: #afa;
   border-color: green;
 }
 
-#registro input[type="reset"] {
+#registro input[type="reset"],
+#contacto input[type="reset"] {
   background-color: #faa;
   border-color: red;
 }
@@ -426,4 +470,25 @@ small {
   background-color: #ccc;
   border: inset;
   cursor: not-allowed;
+}
+
+#registro .terminos {
+  text-align: left;
+}
+
+#infoTerminos {
+  font-weight: bold;
+  color: red;
+}
+
+.controls {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#contacto textarea {
+  vertical-align: top;
+  width: 70%;
+  min-height: 200px;
+  resize: none;
 }
