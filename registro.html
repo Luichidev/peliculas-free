@@ -40,8 +40,8 @@
     </form>
   </div>
 
-  <main>
-    <section>
+  <main class="flex-container">
+    <section class="flex5">
       <h2>Crea tu cuenta</h2>
       <form id="registro" action="#" enctype="multipart/form-data" autocomplete="off">
         <div class="flex-container">
@@ -50,15 +50,22 @@
             <label class="labels" for="name">Nombre:</label>
             <input type="text" id="name" name="name" minlength="3" pattern="[a-zA-Z]{4,30}" required autofocus>
             <br>
+            <label class="labels" for="apellido">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required
+              pattern="^[a-zA-ZñçáéíóúàèòïüÑÇÁÉÍÓÚÀÈÒÏÜ]{2,16}$" title="Solo letras">
+            <br>
+            <label class="labels" for="poblacion">Población:</label>
+            <input type="text" id="poblacion" name="poblacion">
+            <br>
             <label class="labels" for="email">E-mail:</label>
             <input type="email" id="email" name="email" required>
             <br>
             <label for="sex">Sexo</label>
             <br>
             <label>Mujer</label>
-            <input type="radio" name="sex" value="M">
+            <input type="radio" name="sex" value="M" required>
             <label>Hombre</label>
-            <input type="radio" name="sex" value="H">
+            <input type="radio" name="sex" value="H" required>
           </fieldset>
           <fieldset class="flex1">
             <legend>Fecha de Nacimiento</legend>
@@ -66,7 +73,7 @@
             <select name="day" id="day">
               <script>
                 for (let i = 0; i <= 31; i++) {
-                  document.write(`<option value="${i}">${i}<option>`)
+                  document.write(`<option value="${i}">${i}</option>`)
                 }
               </script>
             </select>
@@ -75,7 +82,7 @@
               <script>
                 let meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
                 for (let i = 0; i < 12; i++) {
-                  document.write(`<option value="${i}">${meses[i]}<option>`)
+                  document.write(`<option value="${i}">${meses[i]}</option>`)
                 }
               </script>
             </select>
@@ -85,7 +92,7 @@
                 let year = (new Date()).getFullYear()
 
                 for (let i = year; i >= year - 100; i--) {
-                  document.write(`<option value="${i}">${i}<option>`)
+                  document.write(`<option value="${i}">${i}</option>`)
                 }
               </script>
             </select>
@@ -96,19 +103,23 @@
             <input type="text" name="user" minlength="3" maxlength="10" title="de 3 a 10 letras a-z"
               placeholder="usuario" required pattern="^[a-zA-Z]\w{2,9}$">
             <br>
-            <label class="labels" for="avatar">Avatar</label>
+            <label class="labels" for="avatar">Foto de Perfil</label>
             <input type="file" name="file" accept="image/png">
             <br>
-            <label class="labels" for="color">Elige tu color</label>
+            <label class="labels" for="color">Color favorito</label>
             <input type="color">
             <br>
-            <label class="labels" for="password">Contraseña</label>
+            <label class="labels" for="password">*Contraseña</label>
             <input type="password" id="p1" name="p1" required minlength="4" maxlength="9" title="de 4 a 9 caracteres">
             <br>
-            <label class="labels" for="repeatpws">Repetir</label>
+            <label class="labels" for="repeatpws">*Repetir</label>
             <input type="password" id="p2" name="p2" required minlength="4" maxlength="9" title="de 4 a 9 caracteres">
             <span id="info"></span>
           </fieldset>
+        </div>
+        <div class="terminos">
+          <input type="checkbox" id="terminos"> <span>Acepto los términos y reglas de la página</span>
+          <p id="infoTerminos"></p>
         </div>
         <div class="controls">
           <input type="submit" value="Enviar" id="enviar" disabled title="Rellena el formulario para enviar">
@@ -124,9 +135,30 @@
               info.innerHTML = "Las claves no coinciden";
             }
           }
+
+          registro.onsubmit = function (e) {
+            if (!terminos.checked) {
+              infoTerminos.innerHTML = "* Debe aceptar los terminos";
+              e.preventDefault();
+            } else {
+              registro.reset();
+              alert('Enviando!');
+            }
+          }
+
         </script>
       </form>
     </section>
+    <aside class="flex2 related-pages">
+      <h2>Páginas relacionadas</h2>
+      <ul>
+        <li><a target="_blank" href="https://youtube.com">ir a Youtube</a></li>
+        <li><a target="_blank" href="https://www.imdb.com/">ir a imdb</a></li>
+        <li><span>Página Colaboradora:</span></li>
+        <li><a target="_blank" href="https://www.juegayestudia.com/">ir a Juega y Estudia</a></li>
+
+      </ul>
+    </aside>
   </main>
 
   <footer>
