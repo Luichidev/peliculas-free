@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aqui encontrarás películas totalmente gratis">
+  <title>Registro | Películas Free</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <header class="flex-container">
+    <figure id="logo" class="flex1">
+      <a href="index.html">
+        <img src="imagenes/logo.png" alt="logo de mi web películas FREE">
+      </a>
+    </figure>
+    <h1 class="flex4">Películas FREE</h1>
+  </header>
+
+
+  <div class="flex-container">
+    <nav class="flex5">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="llista.html">Películas</a></li>
+        <li class="active"><a href="registro.html">Registro</a></li>
+        <li><a href="quienes.html">Quienes somos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <form id="login" class="flex2">
+      <input type="text" name="user" placeholder="user">
+      <input type="password" name="password" placeholder="pwrd">
+      <input type="submit" name="login" value="login">
+    </form>
+  </div>
+
+  <main>
+    <section>
+      <h2>Crea tu cuenta</h2>
+      <form id="registro" action="#" enctype="multipart/form-data" autocomplete="off">
+        <div class="flex-container">
+          <fieldset class="flex1">
+            <legend>Datos Personales</legend>
+            <label class="labels" for="name">Nombre:</label>
+            <input type="text" id="name" name="name" minlength="3" pattern="[a-zA-Z]{4,30}" required autofocus>
+            <br>
+            <label class="labels" for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="sex">Sexo</label>
+            <br>
+            <label>Mujer</label>
+            <input type="radio" name="sex" value="M">
+            <label>Hombre</label>
+            <input type="radio" name="sex" value="H">
+          </fieldset>
+          <fieldset class="flex1">
+            <legend>Fecha de Nacimiento</legend>
+            <label for="day">Dia:</label>
+            <select name="day" id="day">
+              <script>
+                for (let i = 0; i <= 31; i++) {
+                  document.write(`<option value="${i}">${i}<option>`)
+                }
+              </script>
+            </select>
+            <label for="month">Mes:</label>
+            <select name="month" id="month">
+              <script>
+                let meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+                for (let i = 0; i < 12; i++) {
+                  document.write(`<option value="${i}">${meses[i]}<option>`)
+                }
+              </script>
+            </select>
+            <label for="year">Año:</label>
+            <select name="year" id="year">
+              <script>
+                let year = (new Date()).getFullYear()
+
+                for (let i = year; i >= year - 100; i--) {
+                  document.write(`<option value="${i}">${i}<option>`)
+                }
+              </script>
+            </select>
+          </fieldset>
+          <fieldset class="flex1">
+            <legend>Datos de Usuario</legend>
+            <label class="labels" for="user">Usuario:</label>
+            <input type="text" name="user" minlength="3" maxlength="10" title="de 3 a 10 letras a-z"
+              placeholder="usuario" required pattern="^[a-zA-Z]\w{2,9}$">
+            <br>
+            <label class="labels" for="avatar">Avatar</label>
+            <input type="file" name="file" accept="image/png">
+            <br>
+            <label class="labels" for="color">Elige tu color</label>
+            <input type="color">
+            <br>
+            <label class="labels" for="password">Contraseña</label>
+            <input type="password" id="p1" name="p1" required minlength="4" maxlength="9" title="de 4 a 9 caracteres">
+            <br>
+            <label class="labels" for="repeatpws">Repetir</label>
+            <input type="password" id="p2" name="p2" required minlength="4" maxlength="9" title="de 4 a 9 caracteres">
+            <span id="info"></span>
+          </fieldset>
+        </div>
+        <div class="controls">
+          <input type="submit" value="Enviar" id="enviar" disabled title="Rellena el formulario para enviar">
+          <input type="reset" value="Borrar">
+        </div>
+        <script>
+          p2.onkeyup = function () {
+            if (p1.value === p2.value) {
+              enviar.disabled = false;
+              info.innerHTML = "";
+            } else {
+              enviar.disabled = true;
+              info.innerHTML = "Las claves no coinciden";
+            }
+          }
+        </script>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <details>
+      <summary>Autor</summary>
+      <p><a href="https://twitter.com/@luichidev">@luichidev - 2021</a></p>
+    </details>
+  </footer>
+</body>
+
+</html>
