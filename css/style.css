@@ -4,10 +4,11 @@
   padding: 0px;
 }
 a {
+  display: inline-block;
   color: inherit;
   text-decoration: none;
+  padding: 10px 15px;
 }
-
 section {
   padding-bottom: 20px;
 }
@@ -17,7 +18,6 @@ section {
   display: flex;
   flex-wrap: wrap;
 }
-
 .flex1 {
   flex: 1;
 }
@@ -36,7 +36,6 @@ section {
 .flex6 {
   flex: 6;
 }
-
 .flex7 {
   flex: 7;
 }
@@ -46,8 +45,14 @@ section {
 
 /* INICIO DE LA HOJA DE ESTILOS */
 html {
-  background: #ccc;
-  background: radial-gradient(circle, #020024 44%, #090979 70%, #00d4ff 100%);
+  /* Cambie el fondo del html con un color mas suave, esta vez no utilice generador */
+  /* background: #ccc;
+  background: radial-gradient(circle, #020024 44%, #090979 70%, #00d4ff 100%); */
+
+  background-image: radial-gradient(#0049ff55 1px, #00d4ff10 1px),
+    radial-gradient(#0049ff55 1px, #00d4ff10 1px);
+  background-position: 0 0 25px;
+  background-size: 20px 20px;
 }
 
 body {
@@ -57,7 +62,7 @@ body {
   width: 80%;
   background-color: white;
   border-radius: 20px;
-  box-shadow: 5px 5px 10px white;
+  box-shadow: 5px 5px 10px #000;
 }
 
 /* HEADER */
@@ -93,7 +98,6 @@ nav {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-  padding: 10px 15px;
   text-transform: capitalize;
   color: #090979;
   font-weight: bold;
@@ -105,7 +109,6 @@ nav ul li:hover {
   background-color: white;
   transform: scale(1.2) rotate(4deg);
 }
-
 li.active {
   color: #fff;
   background-color: #0041db;
@@ -272,6 +275,10 @@ footer {
 
 footer p {
   padding: 5px;
+}
+
+footer .validator {
+  text-align: left;
 }
 
 /* MEDIA QUERY , EN FORMATO MOVIL DESAPARECEMOS EL LOGO */
